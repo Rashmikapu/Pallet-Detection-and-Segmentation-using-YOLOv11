@@ -61,3 +61,12 @@
 
 # Possible errors
 - If an error with Qt is encountered, run the command ```xhost +local:docker```
+
+# Training and saving model weights
+
+## Generating ground truth bounding boxes for pallets and ground using Grounding-DINO
+- Follow notebook `/Grounded-Dino.ipynb` 
+
+## Generating semantic segmentation ground truth using SAM and Training (Fine tuning) yolov11 
+- Follow notebook `/yolov11.ipynb` (mAP and IOU curves are present for detection and segmentation)
+- model weights saved in `/pallet_detection/yolo`
