@@ -53,8 +53,10 @@
     └── inferences
         ├── detection1.jpg
         ├── detection2.jpg
+        ├── detection3.jpg
         ├── segmentation1.jpg
         ├── segmentation2.jpg
+        ├── segmentation3.jpg
 ```
 - Run the command ```cd /ros_ws```
 - Run ```colcon build``` to build the package pallet_detection.
@@ -93,3 +95,9 @@
 
  ## Image 2 segmentation
 <img src="inferences/segmentation2.jpg" alt="Description of the image" width="416" height="416">
+
+## Image 3 detection
+<img src="inferences/detection3.jpg" alt="Description of the image" width="416" height="416">
+
+ ## Image 3 segmentation
+<img src="inferences/segmentation3.jpg" alt="Description of the image" width="416" height="416">
