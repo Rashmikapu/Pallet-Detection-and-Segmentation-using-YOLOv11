@@ -47,7 +47,9 @@
     │       ├── best.pt
     │       ├── test_image.jpg
     │       └── yolo11n.pt
-    └── README.md
+    │── README.md
+    │── Grounded_Dino.ipynb
+    └── yolov11.ipynb
 ```
 - Run the command ```cd /ros_ws```
 - Run ```colcon build``` to build the package pallet_detection.
@@ -65,7 +67,7 @@
 # Training and saving model weights
 
 ## Generating ground truth bounding boxes for pallets and ground using Grounding-DINO
-- Follow notebook `/Grounded-Dino.ipynb` 
+- Follow notebook `/Grounded_Dino.ipynb` 
 
 ## Generating semantic segmentation ground truth using SAM and Training (Fine tuning) yolov11 
 - Follow notebook `/yolov11.ipynb` (mAP and IOU curves are present for detection and segmentation)
