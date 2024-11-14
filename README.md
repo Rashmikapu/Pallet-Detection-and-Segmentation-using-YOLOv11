@@ -49,7 +49,12 @@
     │       └── yolo11n.pt
     │── README.md
     │── Grounded_Dino.ipynb
-    └── yolov11.ipynb
+    │── yolov11.ipynb
+    └── inferences
+        ├── detection1.jpg
+        ├── detection2.jpg
+        ├── segmentation1.jpg
+        ├── segmentation2.jpg
 ```
 - Run the command ```cd /ros_ws```
 - Run ```colcon build``` to build the package pallet_detection.
@@ -72,3 +77,19 @@
 ## Generating semantic segmentation ground truth using SAM and Training (Fine tuning) yolov11 
 - Follow notebook `/yolov11.ipynb` (mAP and IOU curves are present for detection and segmentation)
 - model weights saved in `/pallet_detection/yolo`
+
+# Sample runs (inferences on fine tuned model) 
+ ## Image 1 detection
+![](inferences/detection1.jpg "Image1 detection") 
+ ## Image 1 segmentation
+![](inferences/segmentation1.jpg "Image1 segmentation")
+ <!-- ## Image 2 detection
+![](inferences/detection2.jpg "Image2 detection")
+ ## Image 2 segmentation
+![](inferences/segmentation2.jpg "Image2 segmentation") -->
+
+ ## Image 2 detection
+<img src="inferences/detection2.jpg" alt="Description of the image" width="416" height="416">
+
+ ## Image 2 segmentation
+<img src="inferences/segmentation2.jpg" alt="Description of the image" width="416" height="416">
