@@ -26,6 +26,7 @@ setup(
         'console_scripts': [
             'camera_publisher = pallet_detection.img_publisher:main',
             'bag = pallet_detection.bag:main',
+            'bag_subscriber = pallet_detection.bag_subscriber:main',
             'camera_subscriber = pallet_detection.img_subscriber:main'
         ],
     },

@@ -32,6 +32,7 @@
     |   |   ├── __init__.py
     │   │   ├── img_publisher.py
     │   │   ├── img_subscriber.py
+    │   │   ├── bag_subscriber.py
     │   │   └── bag.py
     │   ├── resource
     │   │   └── pallet_detection
@@ -68,10 +69,16 @@
 # Run the inference
 
 ## With images recorded in the bag file
-Put your bag file (.db3 file and metadata.yaml) in `/pallet_detection/internship_assignment_sample_bag` (As showin in the folder structure above) and change the folder path and file name accordingly in `/pallet_detection/pallet_detection/bag.py` (in line 72) and adjust the topic name in line 48 as needed.
+Put your bag file (.db3 file and metadata.yaml) in `/pallet_detection/internship_assignment_sample_bag` (As shown in the folder structure above) and change the folder path and file name accordingly in `/pallet_detection/pallet_detection/bag.py` (in line 72) and adjust the topic name in line 48 as needed.
 To run inference on images in bag file :
 
  ```ros2 run pallet_detection bag.py```
+
+## By publishing the contents of the bag to the topic using ros2 bag play
+Put your bag file (.db3 file and metadata.yaml) in `/pallet_detection/internship_assignment_sample_bag` (As shown in the folder structure above). Adjust the topic name in `/pallet_detection/pallet_detection/bag_subscriber.py` (in line 22).
+To run the inference on the published message, run ```ros2 launch pallet_detection bag_inference.py```
+Now, in another terminal, source the workspace and run the bag file with the command ```ros2 bag play <bagfile.db3>```
+NOTE: Run the launch file before playing the bag to avoid loss of data and other issues.
 
 ## With video device
 - To launch the publisher and subscriber with the default video device, run the command ```ros2 launch pallet_detection inference_launch.py```
