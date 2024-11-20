@@ -25,6 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
             'camera_publisher = pallet_detection.img_publisher:main',
+            'bag = pallet_detection.bag:main',
             'camera_subscriber = pallet_detection.img_subscriber:main'
         ],
     },

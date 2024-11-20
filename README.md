@@ -31,7 +31,8 @@
     │   ├── pallet_detection
     |   |   ├── __init__.py
     │   │   ├── img_publisher.py
-    │   │   └── img_subscriber.py
+    │   │   ├── img_subscriber.py
+    │   │   └── bag.py
     │   ├── resource
     │   │   └── pallet_detection
     │   ├── setup.cfg
@@ -43,6 +44,9 @@
     │   ├── val_images
     │   │   ├── img1.jpeg
     │   │   └── img2.jpeg
+    │   ├── internship_assignment_sample_bag
+    │   │   ├── internship_assignment_sample_bag_0.db3
+    │   │   └── metadata.yaml
     │   └── yolo
     │       ├── best.pt
     │       ├── test_image.jpg
@@ -56,13 +60,21 @@
         ├── detection3.jpg
         ├── segmentation1.jpg
         ├── segmentation2.jpg
-        ├── segmentation3.jpg
+        └── segmentation3.jpg
 ```
 - Run the command ```cd /ros_ws```
 - Run ```colcon build``` to build the package pallet_detection.
 
 # Run the inference
-- To launch the publisher and subsciber with the default video device, run the command ```ros2 launch pallet_detection inference_launch.py```
+
+## With images recorded in the bag file
+Put your bag file (.db3 file and metadata.yaml) in `/pallet_detection/internship_assignment_sample_bag` (As showin in the folder structure above) and change the folder path and file name accordingly in `/pallet_detection/pallet_detection/bag.py` (in line 72) and adjust the topic name in line 48 as needed.
+To run inference on images in bag file :
+
+ ```ros2 run pallet_detection bag.py```
+
+## With video device
+- To launch the publisher and subscriber with the default video device, run the command ```ros2 launch pallet_detection inference_launch.py```
 
 # Possible Modifications
 - If you have any other camera devices connected with different `/dev/<device>` mapping in the host, map the device while running the docker container to `/dev/video0`. For example ```docker run --privileged --rm -it --gpus all --net=host -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY --device /dev/<deviceN>:/dev/video0 <image-name>```. 
